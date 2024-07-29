@@ -9,8 +9,8 @@ class mvc_model_base {
 
 	open?(): void;
 	close() {
-		tool.object.reset(this, true);
 		mk.monitor.clear(this);
+		tool.object.reset(this, true);
 	}
 }
 
