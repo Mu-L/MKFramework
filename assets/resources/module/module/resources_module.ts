@@ -5,6 +5,8 @@ import { resources_module_layer_control } from "./layer_control/resources_module
 import { resources_module_life_cycle } from "./life_cycle/resources_module_life_cycle";
 import { resources_module_show_alone } from "./show_alone/resources_module_show_alone";
 import { resources_module_ui_stack } from "./ui_stack/resources_module_ui_stack";
+import { resources_module_item } from "./item/resources_module_item";
+import { resources_module_mvc_control } from "./mvc/resources_module_mvc";
 
 const { ccclass, property } = _decorator;
 
@@ -31,7 +33,15 @@ export class resources_module extends mk.view_base {
 				desc_s: "UI 栈",
 				view: resources_module_ui_stack,
 			},
-		],
+			{
+				desc_s: "MVC",
+				view: async () => {
+					let control = new resources_module_mvc_control();
+
+					control.update_test("test123");
+				},
+			},
+		] as typeof resources_module_item.prototype.init_data,
 	};
 
 	/* --------------- protected --------------- */
