@@ -36,7 +36,7 @@ export class resources_module extends mk.view_base {
 			{
 				desc_s: "MVC",
 				view: async () => {
-					let control = new resources_module_mvc_control();
+					const control = new resources_module_mvc_control();
 
 					control.update_test("test123");
 				},
